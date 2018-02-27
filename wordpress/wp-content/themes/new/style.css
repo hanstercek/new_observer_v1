@@ -1,0 +1,402 @@
+/*
+Theme Name: Blank Test Observer
+Theme URI:
+Author: Kayden Mimmack
+Author URI:
+Description:
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+*/
+
+/*--------------------------------------------------------------
+1 Main
+--------------------------------------------------------------*/
+
+* {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #212121;
+  /*font-family: "Playfair Display", serif;*/
+  font-family: "Open Sans Pro", sans-serif;
+  /*font-weight: 400;*/
+  font-weight: 300;
+  font-size: 17px;
+}
+
+h1,
+h2 {
+  /*font-family: "Playfair Display", serif;*/
+  /*font-weight: 900;*/
+  /*font-style: italic;*/
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  /*letter-spacing: 0.04em;*/
+
+  /*letter-spacing: 2px;*/
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+a {
+  color: #b0262c;
+  /*font-style: italic;*/
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  margin: 10px 0;
+  background-color: #212121
+}
+
+/*--------------------------------------------------------------
+2 Content
+--------------------------------------------------------------*/
+
+#content {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.content-wrapper {
+  width: calc(100% - 340px);
+  position: absolute;
+  right: 0;
+}
+
+
+/*--------------------------------------------------------------
+3 Head & Nav
+--------------------------------------------------------------*/
+
+.head-main {
+  width: 340px;
+  height: 100vh;
+  position: fixed;
+  /*border-right: #212121 1px solid;*/
+}
+
+.head-main__content{
+  padding: 20px 40px;
+  /*font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: italic;*/
+  /*font-family: 'Playfair Display', sans-serif;*/
+  font-weight: 300;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+}
+.head-main__logo {
+  width: 100%;
+}
+.head-main__logo img {
+  max-width: 100%;
+}
+
+/*.menu {
+  z-index: 10;
+}*/
+
+.nav-menu-primary {
+  list-style: none;
+  padding-left: 0;
+  font-size: 22px;
+  /*text-transform: uppercase;*/
+}
+.nav-menu-primary > .menu-item {
+  padding-top:0.3em;
+}
+.nav-menu-primary > .menu-item > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-menu-primary > .menu-item > a:hover {
+  /*color: #b0262c;*/
+  /*font-weight: 700;*/
+  text-decoration: underline;
+}
+
+.nav-menu-primary > .active {
+  color: #b0262c;
+  font-weight: 700;
+}
+
+#hamburger {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 40px;
+  height: 40px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+#hamburger > i {
+  font-size: 40px;
+}
+
+@media screen and (max-width: 990px) {
+
+  /* let content fill full screen */
+  .content-wrapper {
+    width: 100%;
+    position: relative;
+    top: 70px;
+  }
+
+  /* move from fixed left to top */
+  .head-main {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    z-index: 25;
+    background-color: white;
+  }
+
+  /* limit height */
+  .head-main__content{
+    height: inherit;
+    text-align: center;
+  }
+
+  /* hide menu (show on click)*/
+  .menu {
+    display: none;
+  }
+
+  .menu.mobile-visible {
+    display: block;
+  }
+
+  #menu-bg {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: -10;
+  }
+
+  /* logo should fit in height */
+  .head-main__logo img {
+    max-height: 100%;
+    /*change clipping*/
+    content: url("assets/images/logo-anton-h.png");
+  }
+
+  .single__article {
+    padding: 0 5%;
+  }
+
+  #hamburger {
+    display: block;
+  }
+}
+
+/*--------------------------------------------------------------
+4 Single
+--------------------------------------------------------------*/
+
+.single__cover-photo {
+  width: 100%;
+  /*padding: 10px;*/
+}
+
+.single__cover-photo img {
+  width: 100%;
+}
+
+.single__title {
+  font-size: 50px;
+  /*letter-spacing: 0.04em;*/
+  margin: 0.6em 10px 0;
+}
+
+.single__subtitle {
+  font-weight: 400;
+  font-size: 20px;
+  margin: 1em 0 2em;
+}
+
+.single__author > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.single__content,
+.single__meta {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  /*text-align: justify;*/
+}
+
+.single__preamble {
+  font-style: italic;
+  text-align: center;
+}
+
+.single__meta {
+  font-style: italic;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.single__tags {
+  float:left
+}
+
+/*--------------------------------------------------------------
+5 Archive
+--------------------------------------------------------------*/
+
+.archive {
+
+}
+
+.archive__title {
+  font-size: 50px;
+  margin: 0;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.archive__cover-photo {
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.archive__cover-photo img {
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+5 Accessibility
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers. */
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/*Post list*/
+
+.stories__story {
+  /*background-color: black;*/
+  max-width: 700px;
+  margin: 20px auto 0;
+
+  font-weight: 400;
+  font-family: "Oswald", sans-serif;
+}
+
+.archive__content .hr {
+  /*width: 50%;*/
+  background-color: #e5e5e5;
+  margin: 20px auto;
+  max-width: 680px;
+  /*text-align: center;*/
+}
+
+.card__column-left {
+  float: left;
+  width: 40%;
+  padding: 10px;
+}
+
+.card__column-right {
+  float: left;
+  width: 60%;
+  padding: 10px;
+}
+
+.stories__story:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.stories__story a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.stories__story img {
+  width: 100%;
+  height: auto;
+}
+
+.card__category {
+  text-transform: uppercase;
+  color: #b0262c;
+  font-size: 20px;
+}
+
+.card__date {
+  font-size: 20px;
+}
+
+.card__title {
+  font-size: 40px;
+  margin: 0;
+  font-weight: inherit;
+  /*font-weight: 400;*/
+  /*padding: 0;*/
+  /*text-transform: uppercase;*/
+}
